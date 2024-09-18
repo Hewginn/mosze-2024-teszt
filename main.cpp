@@ -4,21 +4,21 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS]; //rossz változó név
-    std::cout << '1-100 ertekek duplazasa' //nincs ;
-    for (int i = 0;) //rossz ciklus feltétel
+    int *b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa\n";
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        b[i] = i * 2;
+        b[i] =  (i+1) * 2;
     }
-    for (int i = 0; i; i++)  //rossz ciklus feltétel
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:" //nincs ;
+        std::cout << i << ". Ertek: " << b[i] << '\n';
     }    
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag; //atlag 0 inicializálása kell
-    for (int i = 0; i < N_ELEMENTS, i++) //rossz ciklus feltétel
+    int atlag = 0;
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        atlag += b[i] //nincs ;
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
